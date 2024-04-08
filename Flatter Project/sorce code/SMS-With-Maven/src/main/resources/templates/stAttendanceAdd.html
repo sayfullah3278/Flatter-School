@@ -1,0 +1,244 @@
+<div th:insert="~{header.html}" xmlns="http://www.w3.org/1999/html">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Student</a></li>
+                <li class="breadcrumb-item active">View Student</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+
+
+                            <label class="col-form-label col-sm-2 pt-0"><b>Select Class</b></label>
+
+
+
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '6' ? 'active' : ''}" th:href="@{/student/attenviewbyclass/{aclass}(aClass=6)}" th:text="Class-6" style="font-weight: bold;"><b>classs-6</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '7' ? 'active' : ''}" th:href="@{/student/attenviewbyclass/{aclass}(aClass=7)}" th:text="Class-7" style="font-weight: bold;"><b>classs-7</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '8' ? 'active' : ''}" th:href="@{/student/attenviewbyclass/{aclass}(aClass=8)}" th:text="Class-8" style="font-weight: bold;"><b>classs-8</b></a>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '9' ? 'active' : ''}" th:href="@{/student/attenviewbyclass/{aclass}(aClass=9)}" th:text="Class-9" style="font-weight: bold;"><b>classs-9</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '10' ? 'active' : ''}" th:href="@{/student/attenviewbyclass/{aclass}(aClass=10)}" th:text="Class-10" style="font-weight: bold;"><b>classs-10</b></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+
+                        <!-- start my work-->
+
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h5 class="card-title " >Student Attendance Form <b style="margin-left: 60%">Class : <b><span  style="font-size: 18px; font-weight: bold; color: #000;" class="large-text">6</span></b></b></h5>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Class</label>
+                                        <select class="form-select" field="*{stClass}">
+                                            <option value="" selected>Choose Class</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label class="form-label">Date</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div> <br>
+
+                                <!-- Table with stripped rows -->
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Roll</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Attendance</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr  >
+                                        <th scope="row" >1</th>
+                                        <td>Robiul islam</td>
+                                        <td>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Present
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            Absent
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+
+
+
+                                    </tr>
+                                    <tr  >
+                                        <th scope="row" >2</th>
+                                        <td>Fatematuz Zohura</td>
+                                        <td>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios3" value="option1" checked>
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Present
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios4" value="option2">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            Absent
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+
+
+
+                                    </tr><tr  >
+                                        <th scope="row" >3</th>
+                                        <td>Limon Borno</td>
+                                        <td>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios5" value="option1" checked>
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Present
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadios3" id="gridRadios6" value="option2">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            Absent
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+
+
+
+                                    </tr><tr  >
+                                        <th scope="row" >4</th>
+                                        <td>Sabit hasan</td>
+                                        <td>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadio" id="gridRadios7" value="option1" checked>
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Present
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="gridRadio" id="gridRadios8" value="option2">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            Absent
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+
+
+
+                                    </tr>
+
+
+                                    </tbody>
+
+
+                                </table>
+                                <!-- End Table with stripped rows -->
+<button class="btn btn-success" th:href="@{/student/attenviewss}">Submit</button>
+                            </div>
+                        </div>
+
+
+
+
+                        <!-- end my work -->
+                    </div>
+                </div>
+
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>

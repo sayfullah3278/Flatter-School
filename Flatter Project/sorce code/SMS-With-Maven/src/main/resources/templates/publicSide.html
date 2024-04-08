@@ -1,0 +1,215 @@
+<aside id="sidebar" class="sidebar">
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " th:href="@{/}">
+        <i class="bi bi-grid"></i>
+        <span>Dashboard</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Students</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/student/stform}">
+            <i class="bi bi-circle"></i><span>Add Student</span>
+          </a>
+        </li>
+        <li>
+          <a th:href="@{/student/stviewall}">
+            <i class="bi bi-circle"></i><span>View And Manage Students</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Student's Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Teacher's</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/teacher/teform}">
+            <i class="bi bi-circle"></i><span>Add Teacher</span>
+          </a>
+        </li>
+        <li>
+          <a th:href="@{/teacher/viewteacher}">
+            <i class="bi bi-circle"></i><span>View And Manage Teacher's</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End teacher's Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-layout-text-window-reverse"></i><span>Routine</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/rutine/rutform}">
+            <i class="bi bi-circle"></i><span>Class Routine Create</span>
+          </a>
+        </li>
+        <li>
+          <a th:href="@{/rutine/viewrutine}">
+            <i class="bi bi-circle"></i><span>Class Routine View</span>
+          </a>
+        </li>
+        <li>
+          <a href="tables-data.html">
+            <i class="bi bi-circle"></i><span>Exam Routine Create</span>
+          </a>
+        </li>
+        <li>
+          <a href="tables-general.html">
+            <i class="bi bi-circle"></i><span>Exam Routine View</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Rutine Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-bar-chart"></i><span>Student's Result</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/result/resform}">
+            <i class="bi bi-circle"></i><span>Result Input</span>
+          </a>
+        </li>
+        <li>
+          <a th:href="@{/result/resviewall}">
+            <i class="bi bi-circle"></i><span>Result View</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Result Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#Syllabus-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-bar-chart"></i><span>Syllabus manage</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="Syllabus-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="charts-chartjs.html">
+            <i class="bi bi-circle"></i><span>Syllabus Create</span>
+          </a>
+        </li>
+        <li>
+          <a href="charts-apexcharts.html">
+            <i class="bi bi-circle"></i><span>Syllabus View</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Syllabus Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#attendance-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>Attendance</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="attendance-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/stAttendance}">
+            <i class="bi bi-circle"></i><span>Student's Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a href="icons-remix.html">
+            <i class="bi bi-circle"></i><span>Teacher's Attendance</span>
+          </a>
+        </li>
+
+      </ul>
+    </li>
+    <!-- End Attendance Nav -->
+
+    <li class="nav-heading">Other's</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#idcard-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-gem"></i><span>ID Card</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="idcard-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a th:href="@{/stAttendance}">
+            <i class="bi bi-circle"></i><span>Student's Card</span>
+          </a>
+        </li>
+        <li>
+          <a href="icons-remix.html">
+            <i class="bi bi-circle"></i><span>Teacher's card</span>
+          </a>
+        </li>
+
+      </ul>
+    </li><!-- End ID Card Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-faq.html">
+        <i class="bi bi-question-circle"></i>
+        <span>Admit Card</span>
+      </a>
+    </li><!-- End Admit Card Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-faq.html">
+        <i class="bi bi-question-circle"></i>
+        <span> Card</span>
+      </a>
+    </li><!-- End Admit Card Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-contact.html">
+        <i class="bi bi-envelope"></i>
+        <span>Report</span>
+      </a>
+    </li><!-- End Report Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-register.html">
+        <i class="bi bi-card-list"></i>
+        <span>Registeration</span>
+      </a>
+    </li><!-- End Register Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-login.html">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Online Advertisement</span>
+      </a>
+    </li><!-- End Online Advertisement Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span>Notice</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="forms-elements.html">
+            <i class="bi bi-circle"></i><span>Create Notice</span>
+          </a>
+        </li>
+        <li>
+          <a href="forms-layouts.html">
+            <i class="bi bi-circle"></i><span>View Notice</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" th:href="@{/logout}">
+        <i class="bi bi-file-earmark"></i>
+        <span>Logout</span>
+      </a>
+    </li><!-- End Blank Page Nav -->
+
+  </ul>
+
+</aside><!-- End Sidebar-->

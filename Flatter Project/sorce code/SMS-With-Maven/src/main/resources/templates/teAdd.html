@@ -1,0 +1,127 @@
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:field="@{/}">Student</a></li>
+                <li class="breadcrumb-item active">Student Add Form</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <!--                <div class="card">-->
+                <!--                    <div class="card-body mt-3">-->
+
+                <!--                        &lt;!&ndash; start my work&ndash;&gt;-->
+
+                <!--                        <h1 class="card">at add</h1>-->
+                <!--                        &lt;!&ndash;                        end my work&ndash;&gt;-->
+                <!--                    </div>-->
+
+                <!--                </div>-->
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Teacher Add Form</h5>
+
+                        <!-- Multi Columns Form -->
+                        <form class="row g-3" th:action="@{/teacher/tesave}" th:object="${teacherform}" method="post" enctype="multipart/form-data" >
+
+
+                            <div class="col-md-6">
+                                <label  class="form-label">Full Name</label>
+                                <input type="text" class="form-control"  th:field="*{tname}">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label  class="form-label">Designation</label>
+                                <select  class="form-select" th:field="*{tdesignation}">
+                                    <option value="" selected>Choose </option>
+                                    <option value="Head Teacher">Head Teacher</option>
+                                    <option value="Assesten Teacher">Assesten Teacher</option>
+                                    <option value="Teacher">Teacher</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Email</label>
+                                <input type="email" class="form-control" th:field="*{temail}">
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Mobile No</label>
+                                <input type="text" class="form-control" th:field="*{tphone}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label">Father's Name</label>
+                                <input type="text" class="form-control" th:field="*{tfathersname}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mother's Name</label>
+                                <input type="text" class="form-control" th:field="*{tmothersname}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Gender</label>
+                                <select  class="form-select" th:field="*{tgender}">
+                                    <option value="" selected>Choose One</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date Of Birth</label>
+                                <input type="date" class="form-control" th:field="*{tdob}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label">Joing Date</label>
+                                <input type="date" class="form-control" th:field="*{tjoiningDate}">
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Photo Attach</label>
+                                <input type="file" class="form-control" th:field="*{tphoto}"  accept="image/*" >
+                            </div>
+
+                            <div class="col-6">
+                                <label  class="form-label">CV Attach (only PDF)</label>
+                                <input type="file" class="form-control"  placeholder="" th:field="*{tcv}">
+                            </div>
+<!--                            <div class="col-12">-->
+<!--                                <label  class="form-label">Photo Attachment</label>-->
+<!--                                <input type="file" class="form-control"  th:field="*{stPhoto}">-->
+<!--                            </div>-->
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="text-center">
+
+                                <input type="submit" class="btn btn-success" value="Submit">
+                                <input type="reset" class="btn btn-warning" value="Reset">
+
+                            </div>
+                        </form><!-- End Multi Columns Form -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+<div th:insert="~{footer.html}">...</div>

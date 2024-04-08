@@ -1,0 +1,159 @@
+<!--<div th:insert="~{header.html}">...</div>-->
+<!--<div th:insert="~{sidebar.html}">...</div>-->
+
+<!--<main id="main" class="main">-->
+
+<!--    <div class="pagetitle">-->
+<!--        <h1>Dashboard</h1>-->
+<!--        <nav>-->
+<!--            <ol class="breadcrumb">-->
+<!--                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>-->
+<!--                <li class="breadcrumb-item active">Dashboard</li>-->
+<!--            </ol>-->
+<!--        </nav>-->
+<!--    </div>-->
+
+<!--    <section class="section">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-10 offset-1">-->
+<!--                <div class="card">-->
+<!--                    <div class="card-body mt-3">-->
+
+<!--                        &lt;!&ndash; start my work&ndash;&gt;-->
+
+<!--                        <div class="card  col-mb-3" th:each="stview : ${Allstudent}">-->
+<!--                            <div class="row g-0"  >-->
+<!--                                <div class="col-md-4" >-->
+<!--                                    <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="...">-->
+<!--                                </div>-->
+<!--                                <div class="col-md-8">-->
+<!--                                    <div class="card-body">-->
+<!--                                        <h5 class="card-title" th:text="${stview.stfirstname}" ></h5>-->
+<!--                                        <p class="card-text" th:text="${stview.stphone}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>&lt;!&ndash; End Card with an image on left &ndash;&gt;-->
+<!--                        &lt;!&ndash;                        end my work&ndash;&gt;-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </section>-->
+<!--</main>&lt;!&ndash; End #main &ndash;&gt;-->
+
+<!--<div th:insert="~{footer.html}">...</div>-->
+
+
+
+
+
+
+
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Student</a></li>
+                <li class="breadcrumb-item active">View Student</li>
+            </ol>
+        </nav>
+    </div>
+
+
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+
+
+                            <label class="col-form-label col-sm-2 pt-0"><b>Select Class</b></label>
+
+
+
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '6' ? 'active' : ''}" th:href="@{/student/stviewbyclass/{stClass}(stClass=6)}" th:text="Class-6" style="font-weight: bold;"><b>classs-6</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '7' ? 'active' : ''}" th:href="@{/student/stviewbyclass/{stClass}(stClass=7)}" th:text="Class-7" style="font-weight: bold;"><b>classs-7</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '8' ? 'active' : ''}" th:href="@{/student/stviewbyclass/{stClass}(stClass=8)}" th:text="Class-8" style="font-weight: bold;"><b>classs-8</b></a>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '9' ? 'active' : ''}" th:href="@{/student/stviewbyclass/{stClass}(stClass=9)}" th:text="Class-9" style="font-weight: bold;"><b>classs-9</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:class="${selectedClass == '10' ? 'active' : ''}" th:href="@{/student/stviewbyclass/{stClass}(stClass=10)}" th:text="Class-10" style="font-weight: bold;"><b>classs-10</b></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+                        <h5 class="card-title " >Student View <b style="margin-left: 60%">Class : <b><span th:text="${selectedClass}" style="font-size: 18px; font-weight: bold; color: #000;" class="large-text"></span></b></b></h5>
+                        <!-- start my work-->
+                        <div class="row">
+                            <div class="card col-md-4 mb-4" th:each="student : ${studltList}">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img th:src="@{${'/student/display?sid=' + student.sid}}" class="img-fluid rounded-start" alt="..."><br><br>
+                                        <a th:href="@{/student/stprofile/{id}(id=${student.sid})}" ><b>More Detail</b></a>
+
+
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title" th:text="${student.stfirstname}"></h5>
+                                           <b> <span th:text="'Roll   : '+${student.stRoll}"></span></b><br>
+                                           <b> <span th:text="'Class   : '+${student.stClass}"></span></b><br>
+
+                                            <b><span th:text="'Session :' +${student.session}"></span></b>
+                                            <b><span th:text="'Gender : ' +${student.stgender}"></span></b><br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end my work -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>

@@ -1,0 +1,696 @@
+
+<!--<div th:insert="~{header.html}">...</div>-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title th:text="${title}">School Management</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link th:href="@{/assets/img/favicon.png}" rel="icon">
+    <link th:href="@{/assets/img/apple-touch-icon.png}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link th:href="@{https://fonts.gstatic.com}" rel="preconnect">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i}" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/bootstrap-icons/bootstrap-icons.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/quill/quill.snow.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/quill/quill.bubble.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/remixicon/remixicon.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/simple-datatables/style.css}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link th:href="@{/assets/css/style.css}" rel="stylesheet">
+
+<style>
+    body{
+        margin-top:20px;
+    }
+    .bg-light-gray {
+        background-color: #f7f7f7;
+    }
+    .table-bordered thead td, .table-bordered thead th {
+        border-bottom-width: 2px;
+    }
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+
+
+    .bg-sky.box-shadow {
+        box-shadow: 0px 5px 0px 0px #00a2a7
+    }
+
+    .bg-orange.box-shadow {
+        box-shadow: 0px 5px 0px 0px #af4305
+    }
+
+    .bg-green.box-shadow {
+        box-shadow: 0px 5px 0px 0px #4ca520
+    }
+
+    .bg-yellow.box-shadow {
+        box-shadow: 0px 5px 0px 0px #dcbf02
+    }
+
+    .bg-pink.box-shadow {
+        box-shadow: 0px 5px 0px 0px #e82d8b
+    }
+
+    .bg-purple.box-shadow {
+        box-shadow: 0px 5px 0px 0px #8343e8
+    }
+
+    .bg-lightred.box-shadow {
+        box-shadow: 0px 5px 0px 0px #d84213
+    }
+
+
+    .bg-sky {
+        background-color: #02c2c7
+    }
+
+    .bg-orange {
+        background-color: #e95601
+    }
+
+    .bg-green {
+        background-color: #5bbd2a
+    }
+
+    .bg-yellow {
+        background-color: #f0d001
+    }
+
+    .bg-pink {
+        background-color: #ff48a4
+    }
+
+    .bg-purple {
+        background-color: #9d60ff
+    }
+
+    .bg-lightred {
+        background-color: #ff5722
+    }
+
+    .padding-15px-lr {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .padding-5px-tb {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .margin-10px-bottom {
+        margin-bottom: 10px;
+    }
+    .border-radius-5 {
+        border-radius: 5px;
+    }
+
+    .margin-10px-top {
+        margin-top: 10px;
+    }
+    .font-size14 {
+        font-size: 14px;
+    }
+
+    .text-light-gray {
+        color: #d6d5d5;
+    }
+    .font-size13 {
+        font-size: 13px;
+    }
+
+    .table-bordered td, .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+    .table td, .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="/index" class="logo d-flex align-items-center">
+            <!--            <img th:src="@{/assets/img/logo.png}" alt="">-->
+            <img th:src="@{/assets/img/schoolLogo.png}" alt="">
+            <span class="d-none d-lg-block">SMS Project</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="text-center m-5 p-5 text-success"> <h4><b>LALBAG MODEL SCHOOL AND COLLAGE</b></h4></div>
+
+    <!--    <div class="search-bar">-->
+    <!--        <form class="search-form d-flex align-items-center" method="POST" action="#">-->
+    <!--            <input type="text" name="query" placeholder="Search" title="Enter search keyword">-->
+    <!--            <button type="submit" title="Search"><i class="bi bi-search"></i></button>-->
+    <!--        </form>-->
+    <!--    </div>&lt;!&ndash; End Search Bar &ndash;&gt;-->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li><!-- End Search Icon-->
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a><!-- End Notification Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                        You have 4 new notifications
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-exclamation-circle text-warning"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-x-circle text-danger"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-info-circle text-primary"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li class="dropdown-footer">
+                        <a href="#">Show all notifications</a>
+                    </li>
+
+                </ul>
+                <!-- End Notification Dropdown Items -->
+
+            </li>
+            <!-- End Notification Nav -->
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span class="badge bg-success badge-number">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                    <li class="dropdown-header">
+                        You have 3 new messages
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="dropdown-footer">
+                        <a href="#">Show all messages</a>
+                    </li>
+
+                </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav -->
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img th:src="@{/assets/img/profile-img.jpg}" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">Md. Faysal Hossain</span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>Kevin Anderson</h6>
+                        <span>Web Designer</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-person"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <i class="bi bi-gear"></i>
+                            <span>Account Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                            <i class="bi bi-question-circle"></i>
+                            <span>Need Help?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" th:href="@{/logout}" >
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
+        </ul>
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">Class Rutine</a></li>
+                <li class="breadcrumb-item active">Class Rutine View</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <b> <a th:href="@{/student/view/Class-6}">Class-6</a>
+            &nbsp;&nbsp;<a th:href="@{/student/view/Class-7}">Class-7</a>
+            &nbsp;&nbsp;<a th:href="@{/student/view/Class-8}">Class-8</a>
+            &nbsp;<a th:href="@{/student/view/Class-9}">Class-9</a>
+            &nbsp; &nbsp;<a th:href="@{/student/view/Class-10}">Class-10</a></b><br>
+
+    </div><br>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+<!--                                    <div class="row">-->
+<!--                                        <div class="card col-md-4 mb-4" th:each="resview : ${classRutineAll}">-->
+<!--                                            <div class="row g-0">-->
+<!--                                                <div class="col-md-4">-->
+<!--                                                    <img src="/assets/img/card.jpg" class="img-fluid rounded-start" alt="..."><br><br>-->
+<!--&lt;!&ndash;                                                    <a th:href="@{/student/stprofile/{id}(id=${stview.sid})}" ><b>More Detail</b></a>&ndash;&gt;-->
+
+<!--                                                </div>-->
+<!--                                                <div class="col-md-8">-->
+<!--                                                    <div class="card-body">-->
+<!--                                                        <h5 class="card-title"  th:text="${resview.teacherAddModel?.getTname}"></h5>-->
+<!--&lt;!&ndash;                                                        <b> <span th:text="'teacher name   : '+${resview.teacherAddModel.t_name}"></span></b><br>&ndash;&gt;-->
+<!--                                                        <b><span th:if="${resview.teacherAddModel != null}" th:text="'Teacher Name: ' + ${resview.teacherAddModel.getTname}"></span></b><br>                                                    <b> <span th:text="'teacher name   : '+${resview.second_tea}"></span></b><br>-->
+
+<!--                                                        <b><span th:text="'teacher name :' +${resview.seven_tea}"></span></b>-->
+<!--                                                        <b><span th:text="'teacher name : ' +${resview.third_tea}"></span></b><br>-->
+
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--&lt;!&ndash;&lt;!&ndash;                                -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;&ndash;&gt;-->
+
+
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; end my work &ndash;&gt;-->
+
+
+
+
+                        <div class="container">
+                            <div class="timetable-img text-center">
+                                <img src="img/content/timetable.png" alt="">
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                    <tr class="bg-light-gray">
+                                        <th class="text-uppercase">Time
+                                        </th>
+                                        <th class="text-uppercase">Monday</th>
+                                        <th class="text-uppercase">Tuesday</th>
+                                        <th class="text-uppercase">Wednesday</th>
+                                        <th class="text-uppercase">Thursday</th>
+                                        <th class="text-uppercase">Friday</th>
+                                        <th class="text-uppercase">Saturday</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="align-middle">09:00am</td>
+                                        <td>
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">Bangla</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Math</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                                        </td>
+
+                                        <td>
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Scince</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Islam</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Kate Alley</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">S.Social</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">James Smith</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="align-middle">10:00am</td>
+                                        <td>
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td class="bg-light-gray">
+
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+
+
+
+
+                                        </td>
+                                        <td>
+                                            <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Math</span>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            <div class="font-size13 text-light-gray">Kate Alley</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Islam</span>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Scince</span>
+                                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                                            <div class="font-size13 text-light-gray">James Smith</div>
+                                        </td>
+                                        <td class="bg-light-gray">
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+
+
+
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="align-middle">11:00am</td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Bangla</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Social</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Islam</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</span>
+                                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="align-middle">12:00pm</td>
+                                        <td class="bg-light-gray">
+
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+
+
+
+                                        </td>
+                                        <td>
+                                            <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Art</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Kate Alley</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td class="bg-light-gray">
+
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+
+                                        </td>
+                                        <td>
+                                            <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="align-middle">01:00pm</td>
+                                        <td>
+                                            <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                            <div class="font-size13 text-light-gray">James Smith</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                        <td class="bg-light-gray">
+
+
+                                            <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Dance</span>
+                                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+
+                                        </td>
+                                        <td>
+                                            <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">English</span>
+                                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                            <div class="font-size13 text-light-gray">James Smith</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Yoga</span>
+                                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                                        </td>
+                                        <td>
+                                            <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Music</span>
+                                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<div th:insert="~{footer.html}">...</div>

@@ -1,0 +1,140 @@
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="index.html">Student Result</a></li>
+                <li class="breadcrumb-item active">Result View</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                    <div class="card-body mt-3">
+
+                        <!-- start my work-->
+                        <div class="row">
+
+
+                            <label class="col-form-label col-sm-2 pt-0"><b>Select Class</b></label>
+
+
+
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <a  th:href="@{/result/resviewbyclass/{rclass}(rclass=6)}" th:text="Class-6" style="font-weight: bold;" ><b>classs-6</b></a>
+
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <a th:href="@{/result/resviewbyclass/{rclass}(rclass=7)}" th:text="Class-7" style="font-weight: bold;"><b>classs-7</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:href="@{/result/resviewbyclass/{rclass}(rclass=8)}" th:text="Class-8" style="font-weight: bold;"><b>classs-8</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:href="@{/result/resviewbyclass/{rclass}(rclass=9)}" th:text="Class-9" style="font-weight: bold;"><b>classs-9</b></a>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <a th:href="@{/result/resviewbyclass/{rclass}(rclass=10)}" th:text="Class-10" style="font-weight: bold;"><b>classs-10</b></a>
+                                </div>
+
+                            </div>
+
+                 </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+                        <!-- start my work-->
+                        <div class="row">
+                            <div class="card">
+
+                                <div class="card-body">
+                                    <h5 class="card-title " >Student Result View <b style="margin-left: 60%">Class : <b><span th:text="${selectedClass}" style="font-size: 18px; font-weight: bold; color: #000;" class="large-text"></span></b></b></h5>
+
+                                    <!-- Table with stripped rows -->
+                                    <table class="table table-striped"  >
+
+
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">C. Roll</th>
+<!--                                            <th scope="col">Name</th>-->
+                                            <th scope="col">Ban</th>
+                                            <th scope="col">Eng</th>
+                                            <th scope="col">Math</th>
+                                            <th scope="col">Scince</th>
+                                            <th scope="col">Social</th>
+                                            <th scope="col">Islam</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Avarage</th>
+                                            <th scope="col">GPA</th>
+                                            <th scope="col">Gread</th>
+                                            <th scope="col">Result</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="result : ${resultList}" >
+                                            <th scope="row" th:text="${result.rroll}">1</th>
+<!--                                            <td th:text="${result.rclass}"></td>-->
+                                            <td th:text="${result.rbangla}"></td>
+                                            <td th:text="${result.renglish}"></td>
+                                            <td th:text="${result.rmath}"></td>
+                                            <td th:text="${result.rscince}"></td>
+                                            <td th:text="${result.rsocial}"></td>
+                                            <td th:text="${result.rislam}"></td>
+                                            <td th:text="${result.rtotalmark}"></td>
+                                            <td th:text="${result.ravg}"></td>
+                                            <td th:text="${result.rgpa}"></td>
+                                            <td th:text="${result.rgrade}"></td>
+                                            <td th:text="${result.rpassFail}"></td>
+                                            <td >
+                                                <a th:href="@{/result/delete/{id}(id=${result.rid})}"  class="btn btn-danger"> Delete</a>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <!-- End Table with stripped rows -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- end my work-->
+                    </div>
+
+                </div>
+
+    </section>
+</main><!-- End #main -->
+
+
+
+
+
+
+<div th:insert="~{footer.html}">...</div>

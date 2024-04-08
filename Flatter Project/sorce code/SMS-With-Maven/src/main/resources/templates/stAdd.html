@@ -1,0 +1,248 @@
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:field="@{/}">Student</a></li>
+                <li class="breadcrumb-item active">Student Add Form</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+<!--                <div class="card">-->
+<!--                    <div class="card-body mt-3">-->
+
+<!--                        &lt;!&ndash; start my work&ndash;&gt;-->
+
+<!--                        <h1 class="card">at add</h1>-->
+<!--                        &lt;!&ndash;                        end my work&ndash;&gt;-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Add Form</h5>
+
+                        <!-- Multi Columns Form -->
+                        <form class="row g-3" th:action="@{/student/stsave}" th:object="${studentform}" method="post"  enctype="multipart/form-data" >
+                            <div class="col-md-3">
+                                <label  class="form-label">Session</label>
+                                <select  class="form-select" th:field="*{session}">
+                                    <option value="" selected>Choose Session</option>
+                                    <option value="2024" >2024</option>
+
+                                </select>
+
+                            </div>
+                            <div class="col-md-3">
+                                <label  class="form-label">Batch Id</label>
+                                <select  class="form-select" th:field="*{batchId}" >
+                                    <option value="" selected>Choose Batch Id</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="D">C</option>
+                                    <option value="E">D</option>
+                                    <option value="F">E</option>
+                                    <option value="G">F</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label  class="form-label">Class</label>
+                                <select  class="form-select" th:field="*{stClass}" onchange="updateStudentRoll()">
+                                    <option value="" selected>Choose Class</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label  class="form-label">Student Roll</label>
+                                <select  class="form-select" th:field="*{stRoll}" id="stRoll">
+                                    <option value="" selected>Choose Roll</option>
+<!--                                    <option value="1">1</option>-->
+<!--                                    <option value="2">2</option>-->
+<!--                                    <option value="3">3</option>-->
+<!--                                    <option value="4">4</option>-->
+<!--                                    <option value="5">5</option>-->
+<!--                                    <option value="6">6</option>-->
+<!--                                    <option value="7">7</option>-->
+<!--                                    <option value="8">8</option>-->
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label">First Name</label>
+                                <input type="text" class="form-control"  th:field="*{stfirstname}">
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Last Name</label>
+                                <input type="text" class="form-control" th:field="*{stlastname}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label">Father's Name</label>
+                                <input type="text" class="form-control" th:field="*{stfathersname}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Mother's Name</label>
+                                <input type="text" class="form-control" th:field="*{stmothersname}">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Gender</label>
+                                <select  class="form-select" th:field="*{stgender}">
+                                    <option value="" selected>Choose One</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date Of Birth</label>
+                                <input type="text" class="form-control" th:field="*{stdob}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label">Email</label>
+                                <input type="email" class="form-control" th:field="*{stemail}">
+                            </div>
+                            <div class="col-md-6">
+                                <label  class="form-label">Mobile No</label>
+                                <input type="text" class="form-control"th:field="*{stphone}" >
+                            </div>
+
+                            <div class="col-12">
+                                <label  class="form-label">Address</label>
+                                <input type="text" class="form-control"  placeholder="" th:field="*{staddress}">
+                            </div>
+                            <div class="col-12">
+                                <label  class="form-label">Photo Attachment</label>
+                                <input type="file" class="form-control"  th:field="*{stPhoto}"  accept="image/*">
+
+<!--                                <img th:if="${studentform.image ne null}" th:src="@{/assets/imagess/student/{filename}(filename=${studentform.image})}" alt="Student Image" style="max-width: 100%;"><br>-->
+<!--                                <img id="imagePreview" src="#" alt="User Image" style="display: none; width: 100px;">-->
+                            </div>
+
+                           <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="text-center">
+
+                                <input type="submit" class="btn btn-success" value="Submit">
+                                <input type="reset" class="btn btn-warning" value="Reset">
+
+                            </div>
+                        </form><!-- End Multi Columns Form -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+
+
+<script th:inline="javascript">
+    function updateStudentRoll() {
+        var selectedClass = document.getElementById("stClass").value;
+        var url = '/student/getMaxRoll/' + selectedClass;
+
+        // Make an asynchronous call to the server to get the max roll
+        fetch(url)
+            .then(response => response.text()) // Change here to response.text()
+            .then(data => populateRollOptions(parseInt(data))); // Parse the response as an integer
+    }
+
+    function populateRollOptions(maxRoll) {
+        var selectRoll = document.getElementById("stRoll");
+        selectRoll.innerHTML = '<option value="" selected>Choose Roll</option>';
+
+        for (var i = 1; i <= maxRoll ; i++) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.text = i;
+            selectRoll.appendChild(option);
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<script th:inline="javascript">-->
+<!--    function updateStudentRoll() {-->
+<!--        var selectedClass = document.getElementById("stClass").value;-->
+<!--        var url = '/student/getMaxRoll/' + selectedClass;-->
+
+<!--        // Make an asynchronous call to the server to get the max roll-->
+<!--        fetch(url)-->
+<!--            .then(response => response.json())-->
+<!--            .then(data => populateRollOptions(data));-->
+<!--    }-->
+
+<!--    function populateRollOptions(maxRoll) {-->
+<!--        var selectRoll = document.getElementById("stRoll");-->
+<!--        selectRoll.innerHTML = '<option value="" selected>Choose Roll</option>';-->
+
+<!--        for (var i = 1; i <= maxRoll + 1; i++) {-->
+<!--            var option = document.createElement("option");-->
+<!--            option.value = i;-->
+<!--            option.text = i;-->
+<!--            selectRoll.appendChild(option);-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--    function previewImage() {-->
+<!--        var input = document.querySelector('input[type="file"]');-->
+<!--        var preview = document.getElementById('imagePreview');-->
+
+<!--        if (input.files && input.files[0]) {-->
+<!--            var reader = new FileReader();-->
+
+<!--            reader.onload = function (e) {-->
+<!--                preview.src = e.target.result;-->
+<!--                preview.style.display = 'block';-->
+<!--            };-->
+
+<!--            reader.readAsDataURL(input.files[0]);-->
+<!--        } else {-->
+<!--            preview.src = '#';-->
+<!--            preview.style.display = 'none';-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+
+
+<div th:insert="~{footer.html}">...</div>

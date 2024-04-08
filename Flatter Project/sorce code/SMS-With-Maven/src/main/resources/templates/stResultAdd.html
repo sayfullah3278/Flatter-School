@@ -1,0 +1,439 @@
+<!--<div th:insert="~{header.html}">...</div>-->
+<!--<div th:insert="~{sidebar.html}">...</div>-->
+
+<!--<main id="main" class="main">-->
+
+<!--    <div class="pagetitle">-->
+<!--        <h1>Dashboard</h1>-->
+<!--        <nav>-->
+<!--            <ol class="breadcrumb">-->
+<!--                <li class="breadcrumb-item"><a th:field="@{/}">Result</a></li>-->
+<!--                <li class="breadcrumb-item active">Result Input Form</li>-->
+<!--            </ol>-->
+<!--        </nav>-->
+<!--    </div>-->
+
+<!--    <section class="section">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-10 offset-1">-->
+<!--                &lt;!&ndash;                <div class="card">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <div class="card-body mt-3">&ndash;&gt;-->
+
+<!--                &lt;!&ndash;                        &lt;!&ndash; start my work&ndash;&gt;&ndash;&gt;-->
+
+<!--                &lt;!&ndash;                        <h1 class="card">at add</h1>&ndash;&gt;-->
+<!--                &lt;!&ndash;                        &lt;!&ndash;                        end my work&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--                &lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--                <div class="card">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">Result Add Form</h5>-->
+
+<!--                        &lt;!&ndash; Multi Columns Form &ndash;&gt;-->
+<!--                        <form class="row g-3" th:action="@{/result/ressave}" th:object="${resultform}" method="post">-->
+<!--                            <div class="col-md-4">-->
+<!--                                <label class="form-label">Session</label>-->
+<!--                                <select class="form-select" th:field="*{getRsession}">-->
+<!--                                    <option value="" selected>Choose Session</option>-->
+<!--                                    <option value="2024">2024</option>-->
+
+<!--                                </select>-->
+
+<!--                            </div>-->
+<!--                            <div class="col-md-4">-->
+<!--                                <label class="form-label">Batch Id</label>-->
+<!--                                <select class="form-select">-->
+<!--                                    <option value="" selected>Choose Batch Id</option>-->
+<!--                                    <option value="A">A</option>-->
+<!--                                    <option value="B">B</option>-->
+<!--                                    <option value="D">C</option>-->
+<!--                                    <option value="E">D</option>-->
+<!--                                    <option value="F">E</option>-->
+<!--                                    <option value="G">F</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-4">-->
+<!--                                <label class="form-label">Class</label>-->
+<!--                                <select class="form-select" th:field="*{getRclass}">-->
+<!--                                    <option value="" selected>Choose Class</option>-->
+<!--                                    <option value="6">6</option>-->
+<!--                                    &lt;!&ndash;                                    <option value="7">7</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="8">8</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="9">9</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="10">10</option>&ndash;&gt;-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-4">-->
+<!--                                <label class="form-label">Student Roll</label>-->
+<!--                                <select class="form-select" th:field="*{getRroll}">-->
+<!--                                    <option value="" selected>Choose Roll</option>-->
+<!--                                    <option value="1">1</option>-->
+<!--                                    <option value="2">2</option>-->
+<!--                                    <option value="3">3</option>-->
+<!--                                    &lt;!&ndash;                                    <option value="4">4</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="5">5</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="6">6</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="7">7</option>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                    <option value="8">8</option>&ndash;&gt;-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-4">-->
+<!--                                <label class="form-label">Exam Catagory</label>-->
+<!--                                <select class="form-select" th:field="*{getRexamcatagory}">-->
+<!--                                    <option value="" selected>Choose Catagory</option>-->
+<!--                                    <option value="HElF_YEARLY">HElF_YEARLY</option>-->
+<!--                                    <option value="FINAL">FINAL</option>-->
+
+<!--                                </select>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Bangla</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRbangla}" id="r_bangla"-->
+<!--                                       placeholder=" ">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">English</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRenglish}" id="r_english">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Math</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRmath}" id="r_math">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Scince</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRscince}" id="r_scince">-->
+<!--                            </div>-->
+<!--                            <div class="col-6">-->
+<!--                                <label class="form-label">Social Scince</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRsocial}" id="r_social">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-6">-->
+<!--                                <label class="form-label">Islam </label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRislam}" id="r_islam">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-12">-->
+<!--                                &lt;!&ndash;                                <div class="form-check">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    <input class="form-check-input" type="checkbox" id="gridCheck">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    <label class="form-check-label" for="gridCheck">&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                        Check me out&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                    </label>&ndash;&gt;-->
+<!--                                &lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                                <div id="calculateButton" class="btn btn-primary">Confirm Results Detils</div>-->
+<!--                                &lt;!&ndash;                                <button id="calculateButton" class="btn btn-primary">Calculate Results</button>&ndash;&gt;-->
+
+<!--                            </div>-->
+
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Total Mark</label>-->
+<!--                                <input type="text" class="form-control" id="r_totalmark" th:field="*{getRtotalmark}" disabled>-->
+<!--                            </div>-->
+
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Avarage Mark</label>-->
+<!--                                <input type="text" class="form-control" id="r_avg" th:field="*{getRavg}" disabled>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">G.P.A</label>-->
+<!--                                <input type="text" class="form-control" id="r_gpa" th:field="*{getRgpa}" disabled>-->
+<!--                            </div>-->
+
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Gread</label>-->
+<!--                                <input type="text" class="form-control" id="r_gread" th:field="*{getRgrade}" disabled>-->
+<!--                            </div>-->
+
+
+<!--                            <div class="col-6">-->
+<!--                                <label class="form-label">Result Summary</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{getRpassFail}" id="r_summary" disabled>-->
+<!--                            </div>-->
+
+
+<!--                            <div class="text-center">-->
+
+<!--                                <input type="submit" class="btn btn-success" value="Submit">-->
+<!--                                <input type="reset" class="btn btn-warning" value="Reset">-->
+
+<!--                            </div>-->
+<!--                        </form>&lt;!&ndash; End Multi Columns Form &ndash;&gt;-->
+
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </section>-->
+<!--</main>&lt;!&ndash; End #main &ndash;&gt;-->
+
+
+
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:field="@{/}">Result</a></li>
+                <li class="breadcrumb-item active">Result Input Form</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Result Add Form</h5>
+
+                        <!-- Multi Columns Form -->
+                        <form class="row g-3" th:action="@{/result/ressave}" th:object="${resultform}" method="post">
+                            <div class="col-md-4">
+                                <label class="form-label">Session</label>
+                                <select class="form-select" th:field="*{rsession}">
+                                    <option value="" selected>Choose Session</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Batch Id</label>
+                                <select class="form-select" th:field="*{rbatchid}">
+                                    <option value="" selected>Choose Batch Id</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                    <option value="E">E</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Class</label>
+                                <select id="classDropdown" class="form-select" th:field="*{rclass}">
+                                    <option value="" selected>Choose Class</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Student Roll</label>
+                                <select id="rollDropdown" class="form-select" th:field="*{rroll}">
+                                    <option value="" selected>Choose Roll</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Exam Category</label>
+                                <select class="form-select" th:field="*{rexamcatagory}">
+                                    <option value="" selected>Choose Category</option>
+                                    <option value="HElF_YEARLY">HElF_YEARLY</option>
+                                    <option value="FINAL">FINAL</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Bangla</label>
+                                <input type="text" class="form-control" th:field="*{rbangla}" id="r_bangla" placeholder=" ">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">English</label>
+                                <input type="text" class="form-control" th:field="*{renglish}" id="r_english">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Math</label>
+                                <input type="text" class="form-control" th:field="*{rmath}" id="r_math">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Science</label>
+                                <input type="text" class="form-control" th:field="*{rscince}" id="r_scince">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Social Science</label>
+                                <input type="text" class="form-control" th:field="*{rsocial}" id="r_social">
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label">Islam </label>
+                                <input type="text" class="form-control" th:field="*{rislam}" id="r_islam">
+                            </div>
+
+                            <div class="col-12">
+                                <div id="calculateButton" class="btn btn-primary">Confirm Results Detils</div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Total Mark</label>
+                                <input type="text" class="form-control" id="r_totalmark" th:field="*{rtotalmark}" >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Average Mark</label>
+                                <input type="text" class="form-control" id="r_avg" th:field="*{ravg}">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">G.P.A</label>
+                                <input type="text" class="form-control" id="r_gpa" th:field="*{rgpa}" >
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Grade</label>
+                                <input type="text" class="form-control" id="r_grade" th:field="*{rgrade}" >
+                            </div>
+
+                            <div class="col-6">
+                                <label class="form-label">Result Summary</label>
+                                <input type="text" class="form-control" th:field="*{rpassFail}" id="r_summary" >
+                            </div>
+
+                            <div class="text-center">
+                                <input type="submit" class="btn btn-success" value="Submit">
+                                <input type="reset" class="btn btn-warning" value="Reset">
+                            </div>
+                        </form>
+
+                        <!-- End Multi Columns Form -->
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        // Your existing JavaScript code follows here
+    });
+
+    // New function to handle the calculations when the button is clicked
+    $("#calculateButton").on("click", function () {
+        calculateResults();
+    });
+
+    // Function to calculate the results
+    function calculateResults() {
+        var bangla = parseInt($('#r_bangla').val()) || 0;
+        var english = parseInt($('#r_english').val()) || 0;
+        var math = parseInt($('#r_math').val()) || 0;
+        var science = parseInt($('#r_scince').val()) || 0;
+        var social = parseInt($('#r_social').val()) || 0;
+        var islam = parseInt($('#r_islam').val()) || 0;
+
+        if (bangla < 33 || english < 33 || math < 33 || science < 33 || social < 33 || islam < 33) {
+            var totalMarks = calculateTotalMark(bangla, english, math, science, social, islam);
+            var average = calculateAverageMark(bangla, english, math, science, social, islam);
+
+            $('#r_totalmark').val(totalMarks);
+            $('#r_avg').val(average.toFixed(2));
+
+            $('#r_gpa').val(0.00);
+            $('#r_grade').val('F');
+            $('#r_summary').val('Fail');
+
+            // Display total marks and average in a separate section
+            $('#totalMarksDisplay').text('Total Marks: ' + 0);
+            $('#averageDisplay').text('Average: ' + 0.00);
+            return;
+        }
+
+        var totalMarks = calculateTotalMark(bangla, english, math, science, social, islam);
+        var average = calculateAverageMark(bangla, english, math, science, social, islam);
+        var gpa = calculateGPA(average);
+        var grade = calculateGrade(gpa);
+        var summary = (gpa >= 1.0) ? "Pass" : "Fail";
+
+        // Set the calculated values to the respective input fields
+        $('#r_totalmark').val(totalMarks);
+        $('#r_avg').val(average.toFixed(2));
+        $('#r_gpa').val(gpa.toFixed(2));
+        $('#r_grade').val(grade);
+        $('#r_summary').val(summary);
+    }
+
+    // Function to calculate total mark
+    function calculateTotalMark(bangla, english, math, science, social, islam) {
+        return bangla + english + math + science + social + islam;
+    }
+
+    // Function to calculate average mark
+    function calculateAverageMark(bangla, english, math, science, social, islam) {
+        var totalSubjects = 6; // Assuming 6 subjects
+        return (bangla + english + math + science + social + islam) / totalSubjects;
+    }
+
+    // Function to calculate grade
+    function calculateGrade(gpa) {
+        if (gpa >= 5.0) {
+            return 'A+';
+        } else if (gpa >= 4) {
+            return 'A';
+        } else if (gpa >= 3.5) {
+            return 'A-';
+        } else if (gpa >= 3) {
+            return 'B';
+        } else if (gpa >= 2) {
+            return 'C';
+        } else if (gpa >= 1) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+
+    // Function to calculate GPA based on average
+    function calculateGPA(average) {
+        if (average >= 80) {
+            return 5.0;
+        } else if (average >= 70) {
+            return 4.0;
+        } else if (average >= 60) {
+            return 3.5;
+        } else if (average >= 50) {
+            return 3.0;
+        } else if (average >= 40) {
+            return 2.0;
+        } else if (average >= 33) {
+            return 1.0;
+        } else {
+            return 0.0;
+        }
+    }
+</script>
+
+
+<div th:insert="~{footer.html}">...</div>

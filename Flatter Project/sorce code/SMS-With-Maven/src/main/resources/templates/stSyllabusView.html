@@ -1,0 +1,116 @@
+<div th:insert="header.html">...</div>
+<div th:insert="sidebar.html">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title " >Syllabus View </h5>
+
+                                <!-- Table with stripped rows -->
+                                <table class="table table-striped"  >
+
+
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Class</th>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Page No</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="syLists : ${syList}" >
+                                        <th scope="row" th:text="${syLists.sclass}">1</th>
+                                        <!--                                            <td th:text="${result.rclass}"></td>-->
+                                        <td th:text="${syLists.subject}"></td>
+                                        <td th:text="${syLists.pageNo}"></td>
+                                        <td th:text="${syLists.discription}"></td>
+
+                                        <td >
+
+
+                                            <a th:href="@{/syllabus/delete/{id}(id=${syLists.syid})}" class="btn btn-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+
+                                            <a th:href="@{/syllabus/update/{id}(id=${syLists.syid})}" class="btn btn-warning">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <!-- End Table with stripped rows -->
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--                    <div class="card-body mt-3">-->
+<!--                        <h5 class="card-title " >Syllabus All View <b style="margin-left: 60%"> <b><span th:text="${selectedClass}" style="font-size: 18px; font-weight: bold; color: #000;" class="large-text"></span></b></b></h5>-->
+<!--                        &lt;!&ndash; start my work&ndash;&gt;-->
+<!--                        <div class="row">-->
+<!--                            <div class="card col-md-4 mb-4" th:each="syList : ${syList}">-->
+<!--                                <div class="row g-0">-->
+<!--&lt;!&ndash;                                    <div class="col-md-4">&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;                                        <a th:href="@{/student/stprofile/{id}(id=${student.sid})}" ><b>More Detail</b></a>&ndash;&gt;&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                    <div class="col-md-12">-->
+<!--                                        <div class="card-body">-->
+<!--&lt;!&ndash;                                            <h5 class="card-title" th:text="${syList.subject}" ><b>  </b><br></h5>&ndash;&gt;-->
+
+<!--                                            <h5 class="card-title " ><b><span th:text="${syList.subject}" style="font-size: 18px; font-weight: bold; color: #000;" class="large-text"></span></b> <b style="margin-left: 60%">Class : <b><span th:text="${syList.sclass}" style="font-size: 18px; font-weight: bold; color: #000;" class="large-text"></span></b></b></h5>-->
+<!--                                            <b> <span th:text="'Page   : '+${syList.pageNo}"></span></b><br>-->
+
+
+<!--                                            <b><span th:text="'Discription :' +${syList.discription}"></span></b>-->
+
+<!--                                            <div class="col-lg-9 col-md-8"><a  th:href="@{/syllabus/delete/{id}(id=${syList.syid})}"   class="btn btn-warning">Delete</a></div>-->
+
+
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; end my work &ndash;&gt;-->
+<!--                    </div>-->
+
+            </div>
+
+    </section>
+</main><!-- End #main -->
+
+<div th:insert="footer.html">...</div>

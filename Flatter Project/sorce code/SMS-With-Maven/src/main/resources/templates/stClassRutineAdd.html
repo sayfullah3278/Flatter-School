@@ -1,0 +1,371 @@
+<div th:insert="~{header.html}">...</div>
+<div th:insert="~{sidebar.html}">...</div>
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:field="@{/}">Rutine</a></li>
+                <li class="breadcrumb-item active">Class Rutine Add Form</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-md-10 offset-1">
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Class Rutine Form</h5>
+
+                       <!-- Browser Default Validation -->
+                        <form class="row g-3" th:action="@{/rutine/rutsave}" th:object="${rutform}" method="post">
+                            <div class="col-md-6">
+                                <label  class="form-label"><b>Class</b> </label>
+                                <select  class="form-select" th:field="*{crClass}" >
+<!--                                    <option value="" selected>Select Class</option>-->
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label  class="form-label"><b>Day</b> </label>
+                                <select  class="form-select" th:field="*{crDay}" >
+                                    <option value="" selected>Select Day</option>
+                                    <option value="SUNDAY">SUN_DAY</option>
+                                    <option value="MONDAY">MON_DAY</option>
+                                    <option value="TUESDAY">TUES_DAY</option>
+                                    <option value="WEDNESDAY">WEDNES_DAY</option>
+                                    <option value="THURSDAY">THURS_DAY</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>1st Period</b></label>
+                                <select  class="form-select" th:field="*{first_sub}">
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{first_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                             <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control"  th:field="*{cr_time1}" placeholder="Class Time Input">
+                            </div>
+
+<!--                            ---------------------------------------->
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>2nd Period</b></label>
+                                <select  class="form-select" th:field="*{second_sub}">
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{second_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control" th:field="*{cr_time2}" placeholder="Class Time Input" >
+                            </div>
+<!--                            ------------------------>
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>3rd Period</b></label>
+                                <select  class="form-select"th:field="*{third_sub}">
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{third_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control" th:field="*{cr_time3}" placeholder="Class Time Input" >
+                            </div>
+<!--                            ------------------------------->
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>4th Period</b></label>
+                                <select  class="form-select" th:field="*{forth_sub}" >
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{forth_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control" th:field="*{cr_time4}"  placeholder="Class Time Input" >
+                            </div>
+
+<!--                            -------------------------------->
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>5th Period</b></label>
+                                <select  class="form-select" th:field="*{fivth_sub}">
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{fivth_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control"  th:field="*{cr_time5}" placeholder="Class Time Input">
+                            </div>
+<!--                            ---------------------------->
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>6th Period</b></label>
+                                <select  class="form-select" th:field="*{six_sub}">
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{six_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control" th:field="*{cr_time6}" placeholder="Class Time Input" >
+                            </div>
+<!--                            ------------------------------>
+
+                            <div class="col-md-4">
+                                <label  class="form-label text-success" ><b>7th Period</b></label>
+                                <select  class="form-select" th:field="*{seven_sub}" >
+                                    <option value="" selected>Selete Subject</option>
+                                    <option value="Bangla">Bangla</option>
+                                    <option value="Math">Math</option>
+                                    <option value="English">English</option>
+                                    <option value="ICT">ICT</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Scince">Scince</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <select  class="form-select" th:field="*{seven_tea}">
+                                    <option  th:each="tea:${teaList}" th:text="${tea.tname}" th:value="${tea.tname}">Selete Teacher</option>
+                                    <option value="Robiul Islam">Robiul Islam</option>-->
+
+
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <label  class="form-label">&nbsp;</label>
+                                <input type="text" class="form-control"  th:field="*{cr_time7}" placeholder="Class Time Input">
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                       Check Properly and confirm form
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <input type="submit" value="Submit" class="btn btn-info">
+                            </div>
+                        </form>
+
+                        <!-- Multi Columns Form -->
+
+
+<!--                        <form class="row g-3" th:action="@{/teacher/tesave}" th:object="${teacherform}" method="post" >-->
+
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Full Name</label>-->
+<!--                                <input type="text" class="form-control"  th:field="*{t_name}">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-3">-->
+<!--                                <label  class="form-label">Designation</label>-->
+<!--                                <select  class="form-select" th:field="*{t_designation}">-->
+<!--                                    <option value="" selected>Choose </option>-->
+<!--                                    <option value="Head Teacher">Head Teacher</option>-->
+<!--                                    <option value="Assesten Teacher">Assesten Teacher</option>-->
+<!--                                    <option value="Teacher">Teacher</option>-->
+
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Email</label>-->
+<!--                                <input type="email" class="form-control" th:field="*{t_email}">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Mobile No</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{t_phone}">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Father's Name</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{t_fathersname}">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Mother's Name</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{t_mothersname}">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Gender</label>-->
+<!--                                <select  class="form-select" th:field="*{t_gender}">-->
+<!--                                    <option value="" selected>Choose One</option>-->
+<!--                                    <option value="Male">Male</option>-->
+<!--                                    <option value="Female">Female</option>-->
+
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label class="form-label">Date Of Birth</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{t_dob}">-->
+<!--                            </div>-->
+
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Joing Date</label>-->
+<!--                                <input type="text" class="form-control" th:field="*{t_joiningDate}">-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <label  class="form-label">Photo Attach</label>-->
+<!--                                <input type="file" class="form-control"th:field="*{t_pic}" >-->
+<!--                            </div>-->
+
+<!--                            <div class="col-6">-->
+<!--                                <label  class="form-label">CV Attach (only PDF)</label>-->
+<!--                                <input type="file" class="form-control"  placeholder="" th:field="*{t_cv}">-->
+<!--                            </div>-->
+<!--                            &lt;!&ndash;                            <div class="col-12">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <label  class="form-label">Photo Attachment</label>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <input type="file" class="form-control"  th:field="*{stPhoto}">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            </div>&ndash;&gt;-->
+
+<!--                            <div class="col-12">-->
+<!--                                <div class="form-check">-->
+<!--                                    <input class="form-check-input" type="checkbox" id="gridCheck">-->
+<!--                                    <label class="form-check-label" for="gridCheck">-->
+<!--                                        Check me out-->
+<!--                                    </label>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="text-center">-->
+
+<!--                                <input type="submit" class="btn btn-success" value="Submit">-->
+<!--                                <input type="reset" class="btn btn-warning" value="Reset">-->
+
+<!--                            </div>-->
+<!--                        </form>&lt;!&ndash; End Multi Columns Form &ndash;&gt;-->
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main><!-- End #main -->
+
+<div th:insert="~{footer.html}">...</div>
